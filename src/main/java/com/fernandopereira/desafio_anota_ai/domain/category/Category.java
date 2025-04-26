@@ -16,7 +16,14 @@ public class Category {
 
     private String title;
 
-    private String Owner;
+    private String owner;
 
     private String description;
+
+    public Category(CategoryDTO categoryDTO){
+        this.title = categoryDTO.title();
+        this.description = categoryDTO.description();
+        this.owner = categoryDTO.owner();
+    }
+
 }

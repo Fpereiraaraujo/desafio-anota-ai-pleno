@@ -5,7 +5,7 @@ public record CategoryDTO(
 
         String title,
 
-        String Owner,
+        String owner,
 
         String description
 ){}
