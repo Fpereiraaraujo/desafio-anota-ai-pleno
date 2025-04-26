@@ -1,5 +1,6 @@
 package com.fernandopereira.desafio_anota_ai.domain.product;
 
+import com.fernandopereira.desafio_anota_ai.domain.category.Category;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,5 +25,15 @@ public class Product {
     private Integer price;
 
     private String description;
+
+
+
+
+    public Product (ProductDTO productDTO){
+        this.title = productDTO.title();
+        this.description = productDTO.description();
+        this.owner = productDTO.owner();
+        this.price = productDTO.price();
+    }
 
 }
