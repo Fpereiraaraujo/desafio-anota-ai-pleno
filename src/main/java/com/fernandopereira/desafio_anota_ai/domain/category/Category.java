@@ -12,13 +12,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class Category {
     @Id
-    private String id;
+    public String id;
 
-    private String title;
+    public String title;
 
-    private String owner;
+    public String owner;
 
-    private String description;
+    public String description;
 
     public Category(CategoryDTO categoryDTO){
         this.title = categoryDTO.title();
