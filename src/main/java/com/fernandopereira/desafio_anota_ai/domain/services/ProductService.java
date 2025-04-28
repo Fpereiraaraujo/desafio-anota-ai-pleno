@@ -20,7 +20,6 @@ public class ProductService {
         Category category = this.categoryRepository.findById(productDTO.category()).orElseThrow(
                 CategoryNotFoundException::new
         );
-
         Product newProduct = new Product(productDTO);
         newProduct.setCategory(category);
         this.productRepository.save(newProduct);

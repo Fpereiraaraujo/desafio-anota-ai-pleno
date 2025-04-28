@@ -16,18 +16,19 @@ public class Product {
     @Id
     private Long id;
 
-    private String title;
+    public String title;
 
-    private String owner;
+    public String owner;
 
-    private String category;
+    public String category;
 
-    private Integer price;
+    public Integer price;
 
-    private String description;
+    public String description;
 
-
-
+    public void setCategory(Category category) {
+       this.category = category.toString();
+    }
 
     public Product (ProductDTO productDTO){
         this.title = productDTO.title();
