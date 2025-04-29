@@ -5,7 +5,7 @@ public record ProductDTO(
 
          String title,
 
-         String owner,
+         String ownerId,
 
          String category,
 

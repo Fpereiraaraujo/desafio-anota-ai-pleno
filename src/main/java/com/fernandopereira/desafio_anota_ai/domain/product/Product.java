@@ -18,7 +18,11 @@ public class Product {
 
     public String title;
 
-    public String owner;
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public String ownerId;
 
     public String category;
 
@@ -30,10 +34,22 @@ public class Product {
        this.category = category.toString();
     }
 
+    public void setPrice(Integer price){
+        this.price = price;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public Product (ProductDTO productDTO){
         this.title = productDTO.title();
         this.description = productDTO.description();
-        this.owner = productDTO.owner();
+        this.ownerId = productDTO.ownerId();
         this.price = productDTO.price();
     }
 
