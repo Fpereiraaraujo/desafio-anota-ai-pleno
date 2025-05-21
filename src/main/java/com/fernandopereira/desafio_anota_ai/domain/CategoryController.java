@@ -4,6 +4,8 @@ import com.fernandopereira.desafio_anota_ai.domain.category.Category;
 import com.fernandopereira.desafio_anota_ai.domain.category.CategoryDTO;
 import com.fernandopereira.desafio_anota_ai.domain.services.CategoryService;
 import jakarta.websocket.server.PathParam;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,14 +13,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/category")
+@RequiredArgsConstructor
 public class CategoryController {
 
-    private final CategoryService service;
 
-    public CategoryController(CategoryService service) {
-        this.service = service;
-    }
-
+    @Autowired
+    private CategoryService service;
 
     @PostMapping
     public ResponseEntity<Category> insert(@RequestBody CategoryDTO categoryDTO) {

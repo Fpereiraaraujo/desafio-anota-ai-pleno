@@ -4,6 +4,7 @@ package com.fernandopereira.desafio_anota_ai.domain;
 import com.fernandopereira.desafio_anota_ai.domain.product.Product;
 import com.fernandopereira.desafio_anota_ai.domain.product.ProductDTO;
 import com.fernandopereira.desafio_anota_ai.domain.services.ProductService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,14 +13,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/product")
+@AllArgsConstructor
 public class ProductController {
 
     @Autowired
-    private final ProductService service;
-
-    public ProductController(ProductService service){
-        this.service = service;
-    }
+    private ProductService service;
+    
 
     @PostMapping
     public ResponseEntity<Product> insert(@RequestBody ProductDTO productDTO) {
